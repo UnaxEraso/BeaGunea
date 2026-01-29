@@ -1,11 +1,7 @@
-/* Paleta Beagunea - #ff8181 */
-:root {
-  --primary-rosa: #a21635;
-  
-}
+
 
 footer {
-  background-color: var(--primary-rosa) !important;
+  background: linear-gradient(135deg, #a21635 0%,  #c34f5a 100%);
   box-shadow: 0 -4px 12px rgba(255,129,129,0.15);
   transition: background-color 0.3s ease;
 }
