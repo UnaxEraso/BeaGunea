@@ -1,0 +1,59 @@
+/* Paleta Beagunea - #ff8181 */
+:root {
+  --primary-rosa: #a21635;
+  
+}
+
+footer {
+  background-color: var(--primary-rosa) !important;
+  box-shadow: 0 -4px 12px rgba(255,129,129,0.15);
+  transition: background-color 0.3s ease;
+}
+
+
+
+footer a {
+  transition: all 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--rosa-claro) !important;
+  transform: translateY(-1px);
+}
+
+footer [class*="Bs"] {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+footer [class*="Bs"]:hover {
+  transform: scale(1.1);
+  color: var(--rosa-claro) !important;
+}
+
+/* Selector de idioma */
+.btn-group .btn {
+  border-color: rgba(255,255,255,0.3) !important;
+}
+
+.btn-group .btn:hover,
+.btn-group .btn.active {
+  background: var(--rosa-claro) !important;
+  border-color: var(--rosa-claro) !important;
+  color: var(--texto-oscuro) !important;
+}
+
+/* Responsive extra móviles */
+@media (max-width: 576px) {
+  footer h5 {
+    font-size: 1.25rem;
+  }
+  footer h6 {
+    font-size: 0.95rem;
+  }
+  .d-flex.gap-2 {
+    gap: 1rem;
+  }
+  .d-flex.gap-3 {
+    gap: 1.5rem;
+  }
+}
