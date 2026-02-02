@@ -1,0 +1,101 @@
+/* Contenedor principal */
+.comercios-main-container {
+  background-color: #F8D4BA;
+  min-height: 80vh;
+  margin-top: 100px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.titulo-seccion {
+  color: #541412;
+  font-weight: 700;
+}
+
+.subtitulo-seccion {
+  color: #8d3236;
+}
+
+/* Envoltura para separar las flechas del contenido */
+.swiper-netflix-wrapper {
+  padding: 0 60px; /* Espacio extra para las flechas fuera de las cards */
+  position: relative;
+}
+
+.mySwiper {
+  padding-bottom: 60px !important;
+  padding-top: 20px !important;
+}
+
+/* Flechas de navegación estilo Netflix */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #8d3236 !important;
+  transition: transform 0.2s ease;
+}
+
+.swiper-button-next {
+  right: -5px !important;
+}
+
+.swiper-button-prev {
+  left: -5px !important;
+}
+
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+  font-size: 2.5rem !important; /* Flechas más grandes */
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.2);
+}
+
+/* Paginación (puntos inferiores) */
+.swiper-pagination-bullet-active {
+  background-color: #8d3236 !important;
+}
+
+/* Tarjetas con efecto Zoom */
+.card-netflix {
+  border-radius: 15px !important;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease !important;
+  cursor: pointer;
+}
+
+.card-netflix:hover {
+  transform: scale(1.08); /* Efecto Netflix al pasar el ratón */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+  z-index: 99;
+}
+
+.card-img-custom {
+  height: 220px;
+  object-fit: cover;
+}
+
+.badge-tipo {
+  background-color: #D69F3A !important;
+}
+
+.card-title-custom {
+  color: #541412;
+  font-weight: 600;
+}
+
+.card-text-custom {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.btn-ver-mas {
+  background-color: #8d3236 !important;
+  border: none !important;
+}
+
+.btn-ver-mas:hover {
+  background-color: #541412 !important;
+}

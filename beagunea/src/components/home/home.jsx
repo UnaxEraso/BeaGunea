@@ -51,7 +51,6 @@ const Home = () => {
                    }} />
               <div className="carousel-caption d-none d-md-block">
                 <Container>
-                  <Badge bg="dark" className="mb-3 px-3 py-2 fs-6">🛒 Tokiko dendak</Badge>
                   <h1 className="display-3 fw-bold mb-4 text-white drop-shadow">BeaGunea</h1>
                   <p className="lead fs-2 mb-4 text-white drop-shadow">Tokiko dendak zure hatz artean. Euskaditik Euskadira 24h!</p>
                   <div className="d-flex flex-wrap gap-3 justify-content-center">
@@ -94,7 +93,6 @@ const Home = () => {
         <Container>
           <Row className="justify-content-center text-center mb-5">
             <Col lg={8}>
-              <Badge bg="rosa" className="mb-3 px-3 py-2 fs-6">🚚 Gure abantailak</Badge>
               <h2 className="display-5 fw-bold mb-4">Gure Zerbitzuak</h2>
               <p className="lead text-muted">BeaGunea-k euskal dendak batzen ditu zure eskura. Km0 kalitatea!</p>
             </Col>
@@ -102,7 +100,7 @@ const Home = () => {
           <Row className="g-4">
             <Col lg={4} md={6}>
               <Card className="h-100 shadow-lg border-0 hover-lift service-card text-center">
-                <div className="card-icon bg-primary mb-4 mx-auto">
+                <div className="card-icon bg-primary mb-4 mx-auto my-5">
                   <BsTruck size={48} />
                 </div>
                 <Card.Body className="p-5">
@@ -118,7 +116,7 @@ const Home = () => {
             </Col>
             <Col lg={4} md={6}>
               <Card className="h-100 shadow-lg border-0 hover-lift service-card text-center">
-                <div className="card-icon bg-success mb-4 mx-auto">
+                <div className="card-icon bg-success mb-4 mx-auto my-5">
                   <BsShop size={48} />
                 </div>
                 <Card.Body className="p-5">
@@ -134,7 +132,7 @@ const Home = () => {
             </Col>
             <Col lg={4} md={6}>
               <Card className="h-100 shadow-lg border-0 hover-lift service-card text-center">
-                <div className="card-icon bg-warning mb-4 mx-auto">
+                <div className="card-icon bg-warning mb-4 mx-auto my-5">
                   <BsGift size={48} />
                 </div>
                 <Card.Body className="p-5">
@@ -152,48 +150,12 @@ const Home = () => {
         </Container>
       </section>
 
-      <section className="testimonials py-5 bg-gradient">
-        <Container>
-          <Row className="justify-content-center text-center mb-5">
-            <Col lg={8}>
-              <Badge bg="dark" className="mb-3 px-3 py-2 fs-6">⭐ Bezeroen iritziak</Badge>
-              <h2 className="display-5 fw-bold mb-4 text-white">Bezeroak</h2>
-              <p className="lead text-white-50 mb-0">Milaka euskal bezero asebetuak</p>
-            </Col>
-          </Row>
-          <Carousel className="testimonial-carousel mx-auto" style={{ maxWidth: '800px' }} indicators={false}>
-            {testimonials.map((testimonial, index) => (
-              <Carousel.Item key={index}>
-                <div className="testimonial-card shadow-lg mx-auto text-center">
-                  <div className="stars mb-4 justify-content-center d-flex">
-                    {[...Array(testimonial.stars)].map((_, i) => (
-                      <BsStarFill key={i} className="text-warning fs-5 me-1" />
-                    ))}
-                  </div>
-                  <p className="fs-4 fw-medium mb-4 text-muted px-3">"{testimonial.text}"</p>
-                  <div className="d-flex align-items-center justify-content-center">
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={testimonial.name} 
-                      className="avatar-lg rounded-circle me-3 shadow-sm"
-                    />
-                    <div className="text-start">
-                      <h5 className="mb-1">{testimonial.name}</h5>
-                      <small className="text-primary fw-medium">Bezero leiala</small>
-                    </div>
-                  </div>
-                </div>
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </Container>
-      </section>
+   
 
       <section className="categories py-5">
         <Container>
           <Row className="justify-content-center text-center mb-5">
             <Col lg={8}>
-              <Badge bg="rosa" className="mb-3 px-3 py-2 fs-6">🏪 Kategoriak</Badge>
               <h2 className="display-5 fw-bold mb-4">Kategoriak Popularrak</h2>
             </Col>
           </Row>
@@ -220,7 +182,7 @@ const Home = () => {
         <Container>
           <Row className="justify-content-center text-center mb-5">
             <Col lg={8}>
-              <Badge bg="warning" className="mb-3 px-3 py-2 fs-6"><BsFire /> BEREZIKOAK</Badge>
+           
               <h2 className="display-5 fw-bold mb-4">Produktu Gomendatuak</h2>
               <p className="lead text-muted mb-0">Gaurko ⭐ ⭐ ⭐ ⭐ ⭐ gomendioak</p>
             </Col>
@@ -281,7 +243,6 @@ const Home = () => {
       <section className="cta-section py-5">
         <Container>
           <div className="text-center">
-            <Badge bg="dark" className="mb-4 px-4 py-3 fs-5 d-inline-block"><BsFire /> BEREZIKO AKZIOA</Badge>
             <h2 className="display-3 fw-bold mb-4 text-white">Has zaitez orain!</h2>
             <p className="lead mb-5 fs-3 text-white-50">
               Tokiko dendetan erosi eta komunitatea babestu. Lehenengo 50 erabiltzaileari <strong>5€ deskontua</strong>!
