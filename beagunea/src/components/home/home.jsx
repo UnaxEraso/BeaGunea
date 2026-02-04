@@ -22,28 +22,28 @@ const Home = () => {
 
   const featuredProducts = [
     { 
-      id: 103, 
+      id: 1, 
       name: "Estutzea", 
       price: "15.00€", 
       image: "/images/jostuna/bajopantalon.jpg" 
     },
     { 
-      id: 204, 
+      id: 2, 
       name: "Plantilak", 
       price: "12.00€", 
-      image: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=400" 
+      image: "/images/oinetakoak/plantilla.jpg" 
     },
     { 
       id: 3, 
-      name: "Gazta Idiazabal", 
-      price: "8.90€", 
-      image: "/images/products/gazta.jpg" 
+      name: "Zeramika Katilu Eskuz Egina", 
+      price: "18.50€", 
+      image: "/images/artisau/tazaceramica.jpg",
     },
     { 
       id: 4, 
-      name: "Sidra natural", 
-      price: "12.50€", 
-      image: "/images/products/sidra.jpg" 
+      name: "Tresnen Maletina",
+      price: "89.90€", 
+      image: "/images/taller/maletin.jpg" 
     },
   ];
 
@@ -56,14 +56,14 @@ const Home = () => {
 
   return (
     <main>
-      {/* SECTION 1: HERO CON ZOOM APLICADO */}
+      {/* SECTION 1: HERO */}
       <section className="hero-section position-relative overflow-hidden">
         <div
           className="hero-slide d-flex align-items-center justify-content-center"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('/images/banner1.jpg')`,
             height: "70vh",
-            backgroundSize: "120%", // <--- AQUÍ ESTÁ EL ZOOM (puedes subirlo a 130% si quieres más)
+            backgroundSize: "120%",
             backgroundPosition: "center center",
             backgroundRepeat: "no-repeat"
           }}
@@ -191,9 +191,17 @@ const Home = () => {
                 <Card className="h-100 shadow-lg border-0 hover-lift product-card bg-white">
                   <div className="position-relative">
                     <Card.Img variant="top" src={product.image} className="product-img" />
-                    <Button variant="outline-light" size="sm" className="position-absolute top-2 start-2 rounded-circle p-2 wishlist-btn">
-                      <BsHeartFill />
+                    
+                    {/* --- CORRECCIÓN APLICADA AQUÍ --- */}
+                    <Button 
+                      variant="light" 
+                      className="position-absolute top-0 end-0 m-3 rounded-circle shadow-sm d-flex align-items-center justify-content-center border-0"
+                      style={{ width: "35px", height: "35px" }}
+                    >
+                      <BsHeartFill className="text-danger" size={18} />
                     </Button>
+                    {/* -------------------------------- */}
+
                   </div>
                   <Card.Body className="p-4 text-center">
                     <Card.Title className="h6 fw-bold mb-2 text-truncate">{product.name}</Card.Title>

@@ -6,7 +6,7 @@ import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { Key, BoxArrowRight, FilePersonFill } from "react-bootstrap-icons";
 
 import "./header.css";
-import BeaGuneaLogo from '../img/BeaGunea.png';
+import BeaGuneaLogo from '../img/logoBlancoConLetra.png';
 
 const Header = () => {
   return (

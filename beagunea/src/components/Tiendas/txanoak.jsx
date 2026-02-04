@@ -28,7 +28,7 @@ const comerciosData = {
       "1838tik dotorezia eta kalitatea eskaintzen. Espainiako kapela-denda zaharrena.",
     // ALDAKETA: Kapela asko erakusten dituen irudi espezifikoa (Unsplash)
     imagenBanner:
-      "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?q=80&w=1200", 
+      "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?q=80&w=1200",
     barrio: "Alde Zaharra",
     biografia:
       "Ponsol Etxea ez da denda soil bat, Donostiako historiaren parte bizia baizik. 1838an sortua, Espainiako kapela-denda zaharrena izatearen ohorea dugu. Mende eta erdi baino gehiagoz, gure familiak belaunaldiz belaunaldi transmititu du txapelak eta kapelak egiteko eta saltzeko ofizioa. Gure apaletan munduko marka ospetsuenak eta bertako txapel tradizionalak aurkituko dituzu, beti ere aholkularitza pertsonalizatuarekin.",
@@ -40,25 +40,27 @@ const comerciosData = {
       {
         id: 501,
         nombre: "Txapel Euskaldun Klasikoa",
-        descripcion: "Tolosa markako artile hutsezko txapel beltz tradizionala.",
-        precio: 28.00,
-        imagen: "/images/ponsol/txapela.jpg",
+        descripcion:
+          "Tolosa markako artile hutsezko txapel beltz tradizionala.",
+        precio: 28.0,
+        imagen: "/images/gorros/txapela.jpg",
         valoracion: 5.0,
       },
       {
         id: 502,
         nombre: "Panama Kapela (Handia)",
         descripcion: "Ekuadorren eskuz tokitilla lastoz egindako kapela.",
-        precio: 120.00,
-        imagen: "/images/ponsol/panama.jpg",
+        precio: 120.0,
+        imagen: "/images/gorros/panama.jpg",
         valoracion: 4.9,
       },
       {
         id: 503,
         nombre: "Feltrozko Fedora",
-        descripcion: "Negurako kapela dotorea, untxi-feltroz egina, iragazgaitza.",
-        precio: 85.00,
-        imagen: "/images/ponsol/fedora.jpg",
+        descripcion:
+          "Negurako kapela dotorea, untxi-feltroz egina, iragazgaitza.",
+        precio: 85.0,
+        imagen: "/images/gorros/feltro.jpg",
         valoracion: 4.8,
       },
       // OSAGARRIAK
@@ -66,42 +68,48 @@ const comerciosData = {
         id: 504,
         nombre: "Peaky Blinders Txapela",
         descripcion: "Gatsby estiloko txapela, tweed ehunarekin (Irish Cap).",
-        precio: 45.00,
-        imagen: "/images/ponsol/gatsby.jpg",
+        precio: 45.0,
+        imagen: "/images/gorros/pb.jpg",
         valoracion: 4.7,
       },
       {
         id: 505,
         nombre: "Kapela Ingelesa (Bowler)",
         descripcion: "Klasiko britainiarra, ekitaldi berezietarako aproposa.",
-        precio: 110.00,
-        imagen: "/images/ponsol/bombin.jpg",
+        precio: 110.0,
+        imagen: "/images/gorros/bonbin.jpg",
         valoracion: 4.6,
       },
       {
         id: 506,
-        nombre: "Urdin Arrantzale Txapela",
-        descripcion: "Kotoizko txapel marinel tradizionala.",
-        precio: 22.00,
-        imagen: "/images/ponsol/marinera.jpg",
-        valoracion: 4.8,
+        nombre: "Trilby Kapela",
+        descripcion:
+          "Hegal motzeko kapela arina, estilo urbano eta modernorako.",
+        precio: 38.0,
+        // Irudia: Trilby estiloko kapela (hegal motza)
+        imagen:
+          "https://images.unsplash.com/photo-1533055640609-24b498dfd74c?q=80&w=600",
+        valoracion: 4.7,
       },
+
       // BESTEAK
       {
         id: 507,
         nombre: "Euri-babes Kapela",
         descripcion: "Ehun tekniko iragazgaitzez egindako kapela tolesgarria.",
-        precio: 35.00,
-        imagen: "/images/ponsol/lluvia.jpg",
+        precio: 35.0,
+        imagen: "/images/gorros/lluvia.jpg",
         valoracion: 4.5,
       },
       {
         id: 508,
-        nombre: "Zaintza eskuila",
-        descripcion: "Feltrozko kapelak garbitu eta zaintzeko eskuila berezia.",
-        precio: 15.00,
-        imagen: "/images/ponsol/cepillo.jpg",
-        valoracion: 4.9,
+        nombre: "Bisera Sport", // Gorra normal
+        descripcion:
+          "Eguneroko erabilerarako bisera erosoa, neurri erregulagarriarekin.",
+        precio: 25.0,
+        // Irudia: Bisera (gorra) urdin ilun klasikoa
+        imagen: "/images/gorros/gorras.jpg",
+        valoracion: 4.6,
       },
     ],
   },
@@ -126,7 +134,7 @@ const RenderStars = ({ rating }) => {
 function PonsolEtxeaDetalle() {
   const { id } = useParams();
   const navigate = useNavigate();
-  
+
   // Datuak kargatu
   const comercio = comerciosData[1];
 
@@ -264,9 +272,9 @@ function PonsolEtxeaDetalle() {
                           <span className="producto-precio">
                             {producto.precio.toFixed(2)}€
                           </span>
-                          <Button 
+                          <Button
                             variant="dark"
-                            size="sm" 
+                            size="sm"
                             className="btn-add-cart"
                             onClick={() => handleAddToCart(producto)}
                           >

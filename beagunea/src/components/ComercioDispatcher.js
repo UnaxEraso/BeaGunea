@@ -6,9 +6,7 @@ import Jostuna from './Tiendas/jostuna';       // ID 1
 import Oinetakoak from './Tiendas/oinetakoak'; // ID 2
 import Taller from './Tiendas/taller';         // ID 3
 import Txanoak from './Tiendas/txanoak';       // ID 4
-import Perfume from './Tiendas/perfume';       // ID 5
-import Azoka from './Tiendas/azoka';           // ID 6
-import Artisau from './Tiendas/artisau';       // ID 7
+import Artisau from './Tiendas/artisau';       // ID 5
 
 function ComercioDispatcher() {
   const { id } = useParams(); // Captura el número de la URL (ej: "1", "2")
@@ -25,10 +23,6 @@ function ComercioDispatcher() {
     case 4:
       return <Txanoak />;
     case 5:
-      return <Perfume />;
-    case 6:
-      return <Azoka />;
-    case 7:
       return <Artisau />;
     default:
       return (
