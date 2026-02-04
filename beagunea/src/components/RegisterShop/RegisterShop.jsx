@@ -117,11 +117,11 @@ const RegisterShop = () => {
 
   // --- RENDER ---
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#f8f9fa" }}>
+    <div style={{ minHeight: "80vh", backgroundColor: "#f8f9fa" }}>
       
       {/* ================= PASO 1: FORMULARIO DE REGISTRO ================= */}
       {step === 1 && (
-        <Container className="py-5" style={{ marginTop: "100px" }}>
+        <Container className="py-5 pt-5">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold">Eman izena zure dendari</h2>
             <p className="lead text-muted">Bete datuak zure erakusleiho digitala sortzeko.</p>
