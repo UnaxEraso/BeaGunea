@@ -76,7 +76,12 @@ const Home = () => {
                 hurbileko tratua eta auzoko bizitza galdu ez daitezen.
               </p>
               <div className="d-flex justify-content-center">
-                <Button size="lg" className="btn-rosa px-5 py-3 fs-5">
+                {/* BOTÓN CON NAVEGACIÓN AÑADIDA */}
+                <Button 
+                  size="lg" 
+                  className="btn-rosa px-5 py-3 fs-5"
+                  onClick={() => navigate("/register-shop")}
+                >
                   Erregistratu doan <BsCheckCircleFill className="ms-2" />
                 </Button>
               </div>
@@ -192,7 +197,7 @@ const Home = () => {
                   <div className="position-relative">
                     <Card.Img variant="top" src={product.image} className="product-img" />
                     
-                    {/* --- CORRECCIÓN APLICADA AQUÍ --- */}
+                    {/* --- CORRECCIÓN APLICADA: CORAZÓN VISIBLE --- */}
                     <Button 
                       variant="light" 
                       className="position-absolute top-0 end-0 m-3 rounded-circle shadow-sm d-flex align-items-center justify-content-center border-0"
@@ -200,7 +205,7 @@ const Home = () => {
                     >
                       <BsHeartFill className="text-danger" size={18} />
                     </Button>
-                    {/* -------------------------------- */}
+                    {/* ------------------------------------------- */}
 
                   </div>
                   <Card.Body className="p-4 text-center">

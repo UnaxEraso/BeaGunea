@@ -35,7 +35,7 @@ function Kontaktua() {
           2. Barruan padding handia (py-5 + pt-5 Container-ean) testua jaisteko.
           3. Kolorea gris iluna mantendu dut. */}
       <div 
-        className="kontaktua-banner text-white text-center w-100 mb-5 pt-5" 
+        className="kontaktua-banner text-white text-center w-100 mb-5 " 
         style={{backgroundColor: "#343a40"}} 
       >
         <Container className="py-5 pt-lg-5"> {/* Padding extra goian */}

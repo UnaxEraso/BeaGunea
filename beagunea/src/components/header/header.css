@@ -1,11 +1,16 @@
+/* --- HEADER STYLES --- */
+
 .header-section {
   background: linear-gradient(135deg, #c34f5a 0%, #a21635 100%);
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1050;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para separar del contenido */
 }
 
+/* Imagen del logo */
 .topbar-left img {
   width: 90px;
   height: 120px;
@@ -13,15 +18,19 @@
   display: block;
 }
 
+/* Título */
 .header-title {
   letter-spacing: 2px;
   font-size: 2rem;
+  color: white; /* Aseguramos que sea blanco */
 }
 
+/* Navbar transparente para que se vea el degradado del header */
 .navbar-custom {
   background-color: transparent !important;
 }
 
+/* Enlaces de navegación */
 .nav-link-custom {
   color: #f8d4ba !important;
   font-weight: 600;
@@ -29,12 +38,14 @@
   position: relative;
   transition: all 0.3s ease;
   letter-spacing: 1px;
+  margin: 0 5px; /* Pequeño espacio entre enlaces */
 }
 
 .nav-link-custom:hover {
   color: #d69f3a !important;
 }
 
+/* Efecto de subrayado animado */
 .nav-link-custom::after {
   content: "";
   position: absolute;
@@ -51,6 +62,7 @@
   width: 100%;
 }
 
+/* Botones del header (Login/Register) */
 .header-btn {
   color: #f8d4ba !important;
   border: 1px solid #f8d4ba !important;
@@ -58,17 +70,21 @@
   border-radius: 50px !important;
   padding: 5px 15px !important;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .header-btn:hover {
   background-color: #f8d4ba !important;
   color: #541412 !important;
+  transform: translateY(-2px); /* Pequeño efecto de elevación */
 }
 
+/* Dropdown de usuario */
 .user-dropdown-menu {
   background-color: #2c181a !important;
   border: 1px solid #d69f3a !important;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  margin-top: 10px; /* Separación del botón */
 }
 
 .user-dropdown-menu .dropdown-item {
@@ -80,21 +96,32 @@
   color: #d69f3a !important;
 }
 
-/* SOLUCIÓN: Espaciado para el contenido debajo del header fijo */
+/* --- SOLUCIÓN AL PROBLEMA DE SUPERPOSICIÓN --- */
+/* Como tu logo mide 120px + paddings, el header mide aprox 140-150px.
+   Damos 160px para que respire. */
+
 body {
-  padding-top: 100px;
+  padding-top: 160px; 
 }
 
+/* Ajustes Responsive */
 @media (max-width: 991px) {
   .border-start {
-    border-start: none !important;
+    border-left: none !important; /* Corrección de sintaxis: border-start no existe como propiedad CSS pura */
     border-top: 1px solid rgba(248, 212, 186, 0.2);
     margin-top: 10px;
     padding-top: 10px;
   }
   
-  /* Ajuste del padding en móvil si el header crece */
+  .navbar-collapse {
+    background: linear-gradient(135deg, #c34f5a 0%, #a21635 100%); /* Fondo sólido en móvil al desplegar */
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+  }
+
+  /* En móvil, a veces los menús ocupan más o se colapsan diferente.
+     Aumentamos un poco más por seguridad */
   body {
-    padding-top: 120px;
+    padding-top: 180px;
   }
 }

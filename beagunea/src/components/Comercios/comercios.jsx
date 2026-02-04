@@ -9,7 +9,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import "./comercios.css";
-import Header from "../header/header";
 
 const comerciosLocales = [
   {
@@ -64,7 +63,6 @@ function Comercios() {
 
   return (
     <>
-      <Header />
       <main className="comercios-main-container">
         <Container fluid className="mb-0 pb-0">
           <div className="text-center mb-4">
