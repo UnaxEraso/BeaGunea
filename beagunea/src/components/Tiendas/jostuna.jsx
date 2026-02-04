@@ -1,26 +1,36 @@
-import React from 'react';
-import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
-import { useParams, useNavigate } from 'react-router-dom';
-import { FaStar, FaStarHalfAlt, FaRegStar, FaClock, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y } from 'swiper/modules';
+import React from "react";
+import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { useParams, useNavigate } from "react-router-dom";
+import {
+  FaStar,
+  FaStarHalfAlt,
+  FaRegStar,
+  FaClock,
+  FaMapMarkerAlt,
+  FaPhone,
+} from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, A11y } from "swiper/modules";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import Header from '../header/header';
-import './comercioDetalle.css';
+import Header from "../header/header";
+import "./comercioDetalle.css";
 
 const comerciosData = {
   1: {
     id: 1,
     nombre: "Jostunaren Txokoa",
     tipo: "Jostuna / Mertzeria",
-    descripcion: "Arropa konponketak, neurrira egindako jantziak eta josteko materiala.",
-    imagenBanner: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1200",
+    descripcion:
+      "Arropa konponketak, neurrira egindako jantziak eta josteko materiala.",
+    imagenBanner:
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1200",
     barrio: "Gros",
-    biografia: "Hogei urte baino gehiagoko esperientziarekin haria eta orratz artean, Jostunaren Txokoa zure konfiantzazko tailerra eta mertzeria da Gros auzoan. Arropa konponketaz gain, kalitatezko materialak eskaintzen ditugu zure sorkuntzetarako: botoiak, artileak, oihalak eta osagarri bereziak.",
+    biografia:
+      "Hogei urte baino gehiagoko esperientziarekin haria eta orratz artean, Jostunaren Txokoa zure konfiantzazko tailerra eta mertzeria da Gros auzoan. Arropa konponketaz gain, kalitatezko materialak eskaintzen ditugu zure sorkuntzetarako: botoiak, artileak, oihalak eta osagarri bereziak.",
     horarios: "Astelehenetik Ostiralera: 09:30 - 13:30 | 16:00 - 19:30",
     direccion: "Zabaleta kalea, 12, Gros",
     telefono: "+34 943 00 11 22",
@@ -28,70 +38,72 @@ const comerciosData = {
       // SERVICIOS DE COSTURA
       {
         id: 101,
-        nombre: "Praken Barruak",
-        descripcion: "Bakero, galtza eta txinoen luzeera egokitzapena.",
-        precio: 8.50,
-        imagen: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=400",
-        valoracion: 4.8
+        nombre: "Prendas Personalizadas",
+        descripcion:"Bakero, galtza eta kamiseta luzeera egokitzapena neurrira.",
+        precio: 25.0,
+        imagen:"/images/jostuna/personalizado.jpg",
+        valoracion: 4.9,
       },
       {
         id: 102,
         nombre: "Kremailera Aldaketa",
         descripcion: "Jaka, gona edo praken kremaileren ordezkapena.",
-        precio: 12.00,
-        imagen: "https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=400",
-        valoracion: 4.9
+        precio: 12.0,
+        imagen: "/images/jostuna/cremmallera.jpg",
+        valoracion: 4.9,
       },
       {
         id: 103,
         nombre: "Estutzea",
         descripcion: "Kamiseta, jaka edo soinekoen neurria doitzea.",
-        precio: 15.00,
-        imagen: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=400",
-        valoracion: 4.7
+        precio: 15.0,
+        imagen: "/images/jostuna/bajopantalon.jpg",
+        valoracion: 4.7,
       },
       // NUEVOS PRODUCTOS DE MERCERÍA
       {
         id: 107,
         nombre: "Botoi sorta", // Pack de botones
         descripcion: "Egurrezko eta nakarrezko botoi sorta, diseinu klasikoak.",
-        precio: 3.50,
-        imagen: "https://images.unsplash.com/photo-1605648916361-9bc12ad6a569?q=80&w=400",
-        valoracion: 4.5
+        precio: 3.5,
+        imagen: "/images/jostuna/botones.jpg",
+        valoracion: 4.5,
       },
       {
         id: 108,
         nombre: "Artile Merino Obilloa", // Ovillo de lana
         descripcion: "Kalitate handiko artile merinoa, kolore askotarikoak.",
-        precio: 6.90,
-        imagen: "https://images.unsplash.com/photo-1628151016000-8488e04b4041?q=80&w=400",
-        valoracion: 4.8
+        precio: 6.9,
+        imagen: "/images/jostuna/ovillos.jpg",
+        valoracion: 4.8,
       },
       {
         id: 109,
         nombre: "Kotoizko Oihalak (1m)", // Telas de algodón
         descripcion: "Patchwork eta joskintzarako kotoi organikozko oihalak.",
-        precio: 14.00,
-        imagen: "https://images.unsplash.com/photo-1524275995832-6a84985223c6?q=80&w=400",
-        valoracion: 4.7
+        precio: 14.0,
+        imagen: "/images/jostuna/tela.jpg",
+        valoracion: 4.7,
       },
       {
         id: 110,
-        nombre: "Eskuz Margotutako Haizemailea", // Abanico pintado a mano
-        descripcion: "Bertako artistek eskuz margotutako haizemaile esklusiboa.",
-        precio: 25.00,
-        imagen: "https://images.unsplash.com/photo-1565689626387-9477026572a1?q=80&w=400", // (Foto genérica abanico/arte)
-        valoracion: 4.9
+        nombre: "Eskuz Egindako Haizemailea", // Abanico pintado a mano
+        descripcion:
+          "Bertako artistek eskuz margotutako haizemaile esklusiboa.",
+        precio: 25.0,
+        imagen: "/images/jostuna/abanicos.jpg",
+        valoracion: 4.9,
       },
       {
         id: 111,
         nombre: "Josteko Kit-a", // Kit de costura
-        descripcion: "Oinarrizko tresnak: guraizeak, hariak, orratzak eta zinta.",
-        precio: 18.50,
-        imagen: "https://images.unsplash.com/photo-1531126779181-a6cc72e81792?q=80&w=400",
-        valoracion: 4.6
-      }
-    ]
+        descripcion:
+          "Oinarrizko tresnak: guraizeak, hariak, orratzak eta zinta.",
+        precio: 18.5,
+        imagen: "/images/jostuna/kitcostura.jpg",
+        valoracion: 4.6,
+      },
+    ],
   },
 };
 
@@ -120,9 +132,9 @@ function ComercioDetalle() {
     return (
       <>
         <Header />
-        <Container className="py-5 text-center" style={{marginTop: '100px'}}>
+        <Container className="py-5 text-center" style={{ marginTop: "100px" }}>
           <h2>Ez da komertzioa aurkitu</h2>
-          <Button onClick={() => navigate('/comercios')} className="mt-3">
+          <Button onClick={() => navigate("/comercios")} className="mt-3">
             Saltokietara itzuli
           </Button>
         </Container>
@@ -131,14 +143,14 @@ function ComercioDetalle() {
   }
 
   const handleAddToCart = (producto) => {
-    console.log('Saskira gehitzen:', producto);
+    console.log("Saskira gehitzen:", producto);
   };
 
   return (
     <>
       <Header />
-      <div 
-        className="comercio-banner" 
+      <div
+        className="comercio-banner"
         style={{ backgroundImage: `url(${comercio.imagenBanner})` }}
       >
         <div className="banner-overlay">
@@ -162,7 +174,7 @@ function ComercioDetalle() {
               <p className="biografia-text">{comercio.biografia}</p>
             </div>
           </Col>
-          
+
           <Col lg={4}>
             <Card className="info-card shadow-sm">
               <Card.Body>
@@ -173,7 +185,7 @@ function ComercioDetalle() {
                     <p className="mb-0">{comercio.horarios}</p>
                   </div>
                 </div>
-                
+
                 <div className="info-item">
                   <FaMapMarkerAlt className="info-icon" />
                   <div>
@@ -181,7 +193,7 @@ function ComercioDetalle() {
                     <p className="mb-0">{comercio.direccion}</p>
                   </div>
                 </div>
-                
+
                 <div className="info-item mb-0">
                   <FaPhone className="info-icon" />
                   <div>
@@ -213,12 +225,13 @@ function ComercioDetalle() {
               <SwiperSlide key={producto.id}>
                 <Card className="producto-card h-100 shadow-sm mx-1">
                   <div className="producto-imagen-wrapper">
-                    <Card.Img 
-                      variant="top" 
-                      src={producto.imagen} 
+                    <Card.Img
+                      variant="top"
+                      src={producto.imagen}
                       className="producto-imagen"
                       onError={(e) => {
-                        e.target.src = "https://placehold.co/400x300?text=Irudia+Falta";
+                        e.target.src =
+                          "https://placehold.co/400x300?text=Irudia+Falta";
                       }}
                     />
                     <div className="rating-badge">
@@ -226,7 +239,7 @@ function ComercioDetalle() {
                       <span>{producto.valoracion}</span>
                     </div>
                   </div>
-                  
+
                   <Card.Body className="d-flex flex-column">
                     <Card.Title className="producto-nombre">
                       {producto.nombre}
@@ -240,8 +253,8 @@ function ComercioDetalle() {
                         <span className="producto-precio">
                           {producto.precio.toFixed(2)}€
                         </span>
-                        <Button 
-                          variant="primary" 
+                        <Button
+                          variant="primary"
                           size="sm"
                           onClick={() => handleAddToCart(producto)}
                           className="btn-add-cart"
@@ -258,9 +271,9 @@ function ComercioDetalle() {
         </div>
 
         <div className="text-center mt-5">
-          <Button 
-            variant="outline-secondary" 
-            onClick={() => navigate('/comercios')}
+          <Button
+            variant="outline-secondary"
+            onClick={() => navigate("/comercios")}
           >
             ← Saltokietara itzuli
           </Button>
