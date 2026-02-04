@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/BeaGunea/static/css/main.b26ec00b.css",
-    "main.js": "/BeaGunea/static/js/main.538c5dd3.js",
+    "main.js": "/BeaGunea/static/js/main.8a13d508.js",
     "static/media/logoBlancoConLetra.png": "/BeaGunea/static/media/logoBlancoConLetra.0e1c92ea4ed5c0f36cc4.png",
     "index.html": "/BeaGunea/index.html",
     "main.b26ec00b.css.map": "/BeaGunea/static/css/main.b26ec00b.css.map",
-    "main.538c5dd3.js.map": "/BeaGunea/static/js/main.538c5dd3.js.map"
+    "main.8a13d508.js.map": "/BeaGunea/static/js/main.8a13d508.js.map"
   },
   "entrypoints": [
     "static/css/main.b26ec00b.css",
-    "static/js/main.538c5dd3.js"
+    "static/js/main.8a13d508.js"
   ]
 }
