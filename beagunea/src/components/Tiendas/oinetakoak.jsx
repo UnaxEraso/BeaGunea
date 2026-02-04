@@ -38,9 +38,10 @@ const comerciosData = {
       {
         id: 101,
         nombre: "Prendas Personalizadas",
-        descripcion:"Bakero, galtza eta kamiseta luzeera egokitzapena neurrira.",
+        descripcion:
+          "Bakero, galtza eta kamiseta luzeera egokitzapena neurrira.",
         precio: 25.0,
-        imagen:"/images/jostuna/personalizado.jpg",
+        imagen: "/images/jostuna/personalizado.jpg",
         valoracion: 4.9,
       },
       {
@@ -61,7 +62,7 @@ const comerciosData = {
       },
       {
         id: 107,
-        nombre: "Botoi sorta", 
+        nombre: "Botoi sorta",
         descripcion: "Egurrezko eta nakarrezko botoi sorta, diseinu klasikoak.",
         precio: 3.5,
         imagen: "/images/jostuna/botones.jpg",
@@ -69,7 +70,7 @@ const comerciosData = {
       },
       {
         id: 108,
-        nombre: "Artile Merino Obilloa", 
+        nombre: "Artile Merino Obilloa",
         descripcion: "Kalitate handiko artile merinoa, kolore askotarikoak.",
         precio: 6.9,
         imagen: "/images/jostuna/ovillos.jpg",
@@ -85,16 +86,18 @@ const comerciosData = {
       },
       {
         id: 110,
-        nombre: "Eskuz Egindako Haizemailea", 
-        descripcion: "Bertako artistek eskuz margotutako haizemaile esklusiboa.",
+        nombre: "Eskuz Egindako Haizemailea",
+        descripcion:
+          "Bertako artistek eskuz margotutako haizemaile esklusiboa.",
         precio: 25.0,
         imagen: "/images/jostuna/abanicos.jpg",
         valoracion: 4.9,
       },
       {
         id: 111,
-        nombre: "Josteko Kit-a", 
-        descripcion: "Oinarrizko tresnak: guraizeak, hariak, orratzak eta zinta.",
+        nombre: "Josteko Kit-a",
+        descripcion:
+          "Oinarrizko tresnak: guraizeak, hariak, orratzak eta zinta.",
         precio: 18.5,
         imagen: "/images/jostuna/kitcostura.jpg",
         valoracion: 4.6,
@@ -106,8 +109,7 @@ const comerciosData = {
     id: 2,
     nombre: "Oinetakoak 1949",
     tipo: "Zapatategia / Konponketa",
-    descripcion:
-      "Oinetakoen konponketa tradizionala eta larruzko osagarriak.",
+    descripcion: "Oinetakoen konponketa tradizionala eta larruzko osagarriak.",
     imagenBanner:
       "https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?q=80&w=1200", // Imagen de zapatero/cuero
     barrio: "Parte Zaharra",
@@ -121,66 +123,72 @@ const comerciosData = {
       {
         id: 201,
         nombre: "Zola eta Takoi Aldaketa", // Cambio de suela y tacón
-        descripcion: "Higatutako zolen eta takoien ordezkapena kalitatezko materialekin.",
-        precio: 18.50,
-        imagen: "https://images.unsplash.com/photo-1621332062498-f5d68019b884?q=80&w=400",
-        valoracion: 5.0,
+        descripcion:
+          "Higatutako zolen eta takoien ordezkapena kalitatezko materialekin.",
+        precio: 18.5,
+        imagen: "/images/oinetakoak/cambio.jpg",
       },
       {
         id: 202,
-        nombre: "Zabaltzea (Horma)", // Ensanchar zapatos
-        descripcion: "Estuegiak diren oinetakoak zabaltzea horma bereziekin.",
-        precio: 9.00,
-        imagen: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?q=80&w=400",
-        valoracion: 4.6,
+        nombre: "Larruzko Gerrikoak",
+        descripcion:
+          "Kalitatezko larruzko gerrikoak hainbat estilo eta tamainatan salgai.",
+        precio: 25.0,
+        imagen: "/images/oinetakoak/cintos.jpg",
+        valoracion: 4.7,
       },
       {
         id: 203,
         nombre: "Garbiketa eta Nutrizioa", // Limpieza y nutrición
-        descripcion: "Larruaren garbiketa sakona eta krema hidratatzaile aplikazioa.",
-        precio: 14.50,
-        imagen: "https://images.unsplash.com/photo-1605650172828-b0a34c4b92c4?q=80&w=400",
+        descripcion:
+          "Larruaren garbiketa sakona eta krema hidratatzaile aplikazioa.",
+        precio: 14.5,
+        imagen: "/images/oinetakoak/limpieza.jpg",
         valoracion: 4.8,
       },
       // PRODUCTOS DE VENTA
       {
         id: 204,
         nombre: "Plantilak", // Plantillas de cuero
-        descripcion: "Landare-ontze prozesuko larruzko plantila transpiragarriak.",
-        precio: 12.00,
-        imagen: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=400",
+        descripcion:
+          "Landare-ontze prozesuko larruzko plantila transpiragarriak.",
+        precio: 12.0,
+        imagen: "/images/oinetakoak/plantilla.jpg",
         valoracion: 4.7,
       },
       {
         id: 205,
         nombre: "Lokarri Borobilak", // Cordones redondos
-        descripcion: "Kotoizko lokarri ezkoztatuak, hainbat koloretan eskuragarri.",
-        precio: 3.50,
-        imagen: "https://images.unsplash.com/photo-1549646702-89574df63748?q=80&w=400",
+        descripcion:
+          "Kotoizko lokarri ezkoztatuak, hainbat koloretan eskuragarri.",
+        precio: 3.5,
+        imagen: "/images/oinetakoak/cordones.jpg",
         valoracion: 4.5,
       },
       {
         id: 206,
         nombre: "Zapatu Krema", // Crema de zapatos
-        descripcion: "Erleen argizariarekin egindako krema, beltza eta marroia.",
-        precio: 6.50,
-        imagen: "https://images.unsplash.com/photo-1628149455676-13a45a556d47?q=80&w=400",
+        descripcion:
+          "Erleen argizariarekin egindako krema, beltza eta marroia.",
+        precio: 6.5,
+        imagen: "/images/oinetakoak/crema.jpg",
         valoracion: 4.9,
       },
       {
         id: 207,
-        nombre: "Zedrozko Hormak", // Hormas de cedro
-        descripcion: "Oinetakoen forma mantentzeko zedrozko horma usaintsuak.",
-        precio: 29.90,
-        imagen: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=400",
+        nombre: "Larruzko Bolsoak", // Bolsos de cuero
+        descripcion:
+          "Larruzko bolsoen forma eta usain naturala mantentzeko zedrozko hormak usaintsuak.",
+        precio: 59.9,
+        imagen: "/images/oinetakoak/bolso.jpg",
         valoracion: 4.8,
       },
       {
         id: 208,
         nombre: "Etxeko Zapatilak", // Zapatillas de casa
         descripcion: "Artile naturalezko zapatila erosoak, negurako aproposak.",
-        precio: 35.00,
-        imagen: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?q=80&w=400",
+        precio: 35.0,
+        imagen: "/images/oinetakoak/zapacasa.jpg",
         valoracion: 4.9,
       },
     ],
@@ -287,68 +295,71 @@ function ComercioDetalle() {
         </Row>
 
         <div className="productos-section">
-          <h2 className="section-title mb-4">Gure Produktuak eta Zerbitzuak</h2>
-          <Swiper
-            modules={[Navigation, Pagination, A11y]}
-            spaceBetween={20}
-            slidesPerView={1}
-            navigation={true}
-            pagination={{ clickable: true }}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              992: { slidesPerView: 3 },
-              1200: { slidesPerView: 4 },
-            }}
-            className="productos-swiper py-4"
-          >
-            {comercio.productos.map((producto) => (
-              <SwiperSlide key={producto.id}>
-                <Card className="producto-card h-100 shadow-sm mx-1">
-                  <div className="producto-imagen-wrapper">
-                    <Card.Img
-                      variant="top"
-                      src={producto.imagen}
-                      className="producto-imagen"
-                      onError={(e) => {
-                        e.target.src =
-                          "https://placehold.co/400x300?text=Irudia+Falta";
-                      }}
-                    />
-                    <div className="rating-badge">
-                      <FaStar className="rating-star" />
-                      <span>{producto.valoracion}</span>
-                    </div>
-                  </div>
-
-                  <Card.Body className="d-flex flex-column">
-                    <Card.Title className="producto-nombre">
-                      {producto.nombre}
-                    </Card.Title>
-                    <Card.Text className="producto-descripcion">
-                      {producto.descripcion}
-                    </Card.Text>
-                    <div className="mt-auto">
-                      <RenderStars rating={producto.valoracion} />
-                      <div className="d-flex justify-content-between align-items-center mt-3">
-                        <span className="producto-precio">
-                          {producto.precio.toFixed(2)}€
-                        </span>
-                        <Button
-                          variant="primary"
-                          size="sm"
-                          onClick={() => handleAddToCart(producto)}
-                          className="btn-add-cart"
-                        >
-                          Gehitu
-                        </Button>
-                      </div>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+                 <h2 className="section-title mb-4">Gure Produktuak</h2>
+        
+        
+                 <div className="productos-swiper-wrapper">
+                   <div className="productos-prev"></div>
+                   <div className="productos-next"></div>
+        
+        
+                   <Swiper
+                     modules={[Navigation, Pagination, A11y]}
+                     navigation={{
+                       prevEl: ".productos-prev",
+                       nextEl: ".productos-next",
+                     }}
+                     spaceBetween={20}
+                     slidesPerView={1}
+                     pagination={{ clickable: true }}
+                     breakpoints={{
+                       640: { slidesPerView: 2 },
+                       992: { slidesPerView: 3 },
+                       1200: { slidesPerView: 4 },
+                     }}
+                     className="productos-swiper py-4"
+                   >
+                     {comercio.productos.map((producto) => (
+                       <SwiperSlide key={producto.id}>
+                         <Card className="producto-card h-100 shadow-sm mx-1">
+                           <div className="producto-imagen-wrapper">
+                             <Card.Img
+                               variant="top"
+                               src={producto.imagen}
+                               className="producto-imagen"
+                             />
+                             <div className="rating-badge">
+                               <FaStar className="rating-star" />
+                               <span>{producto.valoracion}</span>
+                             </div>
+                           </div>
+        
+        
+                           <Card.Body className="d-flex flex-column">
+                             <Card.Title className="producto-nombre">
+                               {producto.nombre}
+                             </Card.Title>
+                             <Card.Text className="producto-descripcion">
+                               {producto.descripcion}
+                             </Card.Text>
+                             <div className="mt-auto">
+                               <RenderStars rating={producto.valoracion} />
+                               <div className="d-flex justify-content-between align-items-center mt-3">
+                                 <span className="producto-precio">
+                                   {producto.precio.toFixed(2)}€
+                                 </span>
+                                 <Button size="sm" className="btn-add-cart">
+                                   Gehitu
+                                 </Button>
+                               </div>
+                             </div>
+                           </Card.Body>
+                         </Card>
+                       </SwiperSlide>
+                     ))}
+                   </Swiper>
+                 </div>
+               </div>
 
         <div className="text-center mt-5">
           <Button
