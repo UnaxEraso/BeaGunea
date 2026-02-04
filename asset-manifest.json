@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/BeaGunea/static/css/main.e60fe2ff.css",
-    "main.js": "/BeaGunea/static/js/main.64a6629a.js",
+    "main.css": "/BeaGunea/static/css/main.4f9fb0a8.css",
+    "main.js": "/BeaGunea/static/js/main.3d55995c.js",
     "static/media/logoBlancoConLetra.png": "/BeaGunea/static/media/logoBlancoConLetra.0e1c92ea4ed5c0f36cc4.png",
     "index.html": "/BeaGunea/index.html",
-    "main.e60fe2ff.css.map": "/BeaGunea/static/css/main.e60fe2ff.css.map",
-    "main.64a6629a.js.map": "/BeaGunea/static/js/main.64a6629a.js.map"
+    "main.4f9fb0a8.css.map": "/BeaGunea/static/css/main.4f9fb0a8.css.map",
+    "main.3d55995c.js.map": "/BeaGunea/static/js/main.3d55995c.js.map"
   },
   "entrypoints": [
-    "static/css/main.e60fe2ff.css",
-    "static/js/main.64a6629a.js"
+    "static/css/main.4f9fb0a8.css",
+    "static/js/main.3d55995c.js"
   ]
 }
