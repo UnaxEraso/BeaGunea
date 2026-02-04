@@ -57,11 +57,11 @@ const Header = () => {
               </Nav.Link>
               
               <Nav.Link as={Link} to="/comercios" className="nav-link-custom text-uppercase">
-                Comercios
+                Komertzioak
               </Nav.Link>
               
               <Nav.Link as={Link} to="/contacto" className="nav-link-custom text-uppercase">
-                Contacto
+                Kontaktua
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

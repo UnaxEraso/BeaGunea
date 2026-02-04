@@ -1,4 +1,4 @@
-/* home.css - NUEVA PALETA #c34f5a → #a21635 + dorado - BOTONES UNIFICADOS */
+/* home.css - DISEÑO FINAL CON EFECTO BLUR */
 
 :root {
   --primary-dark: #c34f5a;
@@ -6,393 +6,164 @@
   --accent-gold: #d69f3a;
   --text-gold: #f8d4ba;
   --dark-bg: #2c181a;
-  --shadow-sm: 0 4px 15px rgba(195, 79, 90, 0.3);
-  --shadow-md: 0 12px 35px rgba(162, 22, 53, 0.4);
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 12px 35px rgba(162, 22, 53, 0.3);
   --shadow-gold: 0 8px 25px rgba(214,159,58,0.4);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* BOTONES UNIFICADOS - ESTILO REDONDO MODERNO */
-.btn-rosa,
-.btn-rosa:hover,
-.cta-section .btn-rosa,
-.featured-products .btn-rosa {
+/* --- BOTONES --- */
+.btn-rosa {
   background: linear-gradient(135deg, var(--accent-gold), #e6b23c) !important;
   border: none !important;
   border-radius: 50px !important;
   padding: 14px 35px !important;
   font-weight: 700 !important;
   color: var(--primary-darker) !important;
-  font-size: 1rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
-  position: relative !important;
-  overflow: hidden !important;
   box-shadow: var(--shadow-gold) !important;
-  min-height: 52px !important;
+  transition: var(--transition) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 0.5rem !important;
-  transition: var(--transition) !important;
-  text-decoration: none !important;
 }
 
-.btn-rosa::before,
-.cta-section .btn-rosa::before {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: -100% !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent) !important;
-  transition: left 0.6s !important;
-}
-
-.btn-rosa:hover::before,
-.cta-section .btn-rosa:hover::before {
-  left: 100% !important;
-}
-
-.btn-rosa:hover,
-.cta-section .btn-rosa:hover {
+.btn-rosa:hover {
   transform: translateY(-4px) scale(1.03) !important;
   box-shadow: 0 18px 45px rgba(214,159,58,0.6) !important;
-  background: linear-gradient(135deg, #e6b23c, var(--accent-gold)) !important;
-  color: var(--primary-darker) !important;
 }
 
-/* BOTONES SECUNDARIOS UNIFICADOS */
-.btn-outline-rosa,
-.cta-section .btn-outline-light {
+.btn-outline-rosa {
   color: var(--primary-dark) !important;
   border: 2px solid var(--primary-dark) !important;
-  background: rgba(195,79,90,0.08) !important;
+  background: transparent !important;
   border-radius: 50px !important;
-  padding: 12px 30px !important;
+  padding: 10px 25px !important;
   font-weight: 600 !important;
-  font-size: 1rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
-  min-height: 48px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 0.5rem !important;
   transition: var(--transition) !important;
 }
 
-.btn-outline-rosa:hover,
-.cta-section .btn-outline-light:hover {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-darker)) !important;
-  color: var(--text-gold) !important;
-  transform: translateY(-3px) !important;
-  box-shadow: var(--shadow-md) !important;
-  border-color: transparent !important;
+.btn-outline-rosa:hover {
+  background: var(--primary-dark) !important;
+  color: white !important;
 }
 
-/* SOBREESCIBE ESPECÍFICO CTA (ya unificado arriba) */
-.cta-section h2,
-.cta-section .lead,
-.cta-section .stat-number,
-.cta-section .stat-label {
-  color: #212529 !important;
-}
-
-.cta-section .stat-number {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-darker));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* UTILIDADES DE COLOR (mantener) */
-.bg-primary-dark { background: var(--primary-dark) !important; }
-.bg-primary-darker { background: var(--primary-darker) !important; }
-.bg-accent-gold { background: var(--accent-gold) !important; }
-.text-gold { color: var(--text-gold) !important; }
-.text-accent-gold { color: var(--accent-gold) !important; }
-.bg-rosa { background: linear-gradient(135deg, var(--primary-dark), var(--primary-darker)) !important; }
-.text-white-50 { color: rgba(248,212,186,0.6) !important; }
-
-/* HERO SECTION */
-.hero-section .carousel-item {
-  position: relative;
+/* --- HERO SECTION CON EFECTO BLUR --- */
+.hero-section {
+  overflow: hidden;
 }
 
 .hero-slide {
   background-size: cover;
   background-position: center;
   height: 70vh;
-  position: relative;
 }
 
 .carousel-caption {
-  background: linear-gradient(90deg, rgba(162,22,53,0.9) 0%, rgba(195,79,90,0.7) 100%);
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(248,212,186,0.2);
+  /* Fondo granate semi-transparente */
+  /* EL DESENFOQUE */
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  
+  border: 1px solid rgba(248, 212, 186, 0.2) !important;
+  border-radius: 24px !important;
+  padding: 3rem !important;
+  
+  /* Posicionamiento */
+  position: relative !important;
+  max-width: 850px;
+  margin: 0 auto;
+  left: 0 !important;
+  right: 0 !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .drop-shadow {
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* SERVICES */
-.services {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-}
-
+/* --- GURE ZERBITZUAK --- */
 .service-card {
-  border-radius: 24px !important;
-  overflow: hidden;
-  background: linear-gradient(145deg, #ffffff, #f8f9fa);
-  border: 1px solid rgba(248,212,186,0.1);
+  border-radius: 20px !important;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  transition: var(--transition);
 }
 
 .card-icon {
-  width: 90px;
-  height: 90px;
+  width: 85px;
+  height: 85px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  box-shadow: var(--shadow-md);
+  margin: 0 auto;
+  box-shadow: var(--shadow-sm);
   transition: var(--transition);
-  position: relative;
-  overflow: hidden;
 }
 
-.card-icon::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(248,212,186,0.3), transparent);
-  transition: left 0.5s;
-}
-
-.card-icon:hover::before {
-  left: 100%;
-}
+.bg-primary.card-icon { background-color: #007bff !important; color: white !important; }
+.bg-success.card-icon { background-color: #28a745 !important; color: white !important; }
+.bg-warning.card-icon { background-color: #ffc107 !important; color: #212529 !important; }
 
 .service-card:hover .card-icon {
   transform: scale(1.1) rotate(5deg);
+  box-shadow: var(--shadow-md);
 }
 
-/* ANIMACIONES GENERALES */
-.hover-lift {
-  transition: var(--transition);
-}
-
-.hover-lift:hover {
-  transform: translateY(-15px);
-  box-shadow: var(--shadow-md) !important;
-}
-
-.hover-scale {
-  transition: var(--transition);
-}
-
-.hover-scale:hover {
-  transform: scale(1.02);
-}
-
-/* TESTIMONIALS */
-.bg-gradient {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
-}
-
-.testimonial-carousel .carousel-control-prev,
-.testimonial-carousel .carousel-control-next {
-  width: 5%;
-  opacity: 0.5;
-  transition: opacity 0.3s;
-  filter: brightness(0) invert(1);
-}
-
-.testimonial-carousel:hover .carousel-control-prev,
-.testimonial-carousel:hover .carousel-control-next {
-  opacity: 1;
-}
-
-.testimonial-card {
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 3rem 2.5rem;
-  border: 1px solid rgba(248,212,186,0.3);
-  box-shadow: 0 20px 60px rgba(195,79,90,0.2);
-}
-
-.avatar-lg {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border: 4px solid rgba(248,212,186,0.3);
-}
-
-/* CATEGORÍAS */
+/* --- CATEGORÍAS (FONDO GRANATE) --- */
 .categories {
-  background: linear-gradient(135deg, #faf9f8 0%, #f5f3f1 100%);
-}
-
-.category-card {
-  border: 1px solid rgba(248,212,186,0.2);
-  transition: var(--transition);
-}
-
-.category-card:hover {
-  border-color: var(--accent-gold);
-  box-shadow: 0 15px 40px rgba(214,159,58,0.15);
-}
-
-.cat-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-darker));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-gold);
-  font-size: 2rem;
-  box-shadow: var(--shadow-sm);
-}
-
-/* PRODUCTOS → FONDO ROJO */
-.featured-products {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%) !important;
-  position: relative;
-  overflow: hidden;
+  padding: 5rem 0;
 }
 
-.featured-products::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(248,212,186,0.15) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(248,212,186,0.2) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.featured-products h2,
-.featured-products .lead {
+.categories h2 {
   color: var(--text-gold) !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
-.featured-products .product-card {
-  background: rgba(255,255,255,0.95) !important;
+.categories .category-card {
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
   color: #212529 !important;
+}
+
+/* --- PRODUCTOS (FONDO CLARO) --- */
+.featured-products {
+  background: linear-gradient(135deg, #faf9f8 0%, #f5f3f1 100%) !important;
+  padding: 5rem 0;
 }
 
 .product-card {
   border-radius: 20px !important;
-  overflow: hidden;
-  border: 1px solid rgba(248,212,186,0.1);
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  box-shadow: var(--shadow-sm);
   transition: var(--transition);
-}
-
-.product-card:hover {
-  border-color: rgba(214,159,58,0.3);
 }
 
 .product-card img {
-  height: 220px;
+  height: 230px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.product-card:hover img {
-  transform: scale(1.05);
+.text-rosa {
+  color: var(--primary-darker) !important;
+  font-weight: 700;
 }
 
-.wishlist-btn {
-  transition: var(--transition);
-  opacity: 0;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(248,212,186,0.3) !important;
-}
-
-.product-card:hover .wishlist-btn {
-  opacity: 1;
-  transform: scale(1.1);
-  background: rgba(248,212,186,0.1) !important;
-}
-
-/* CTA → FONDO CLARO */
-.cta-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(195,79,90,0.05) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(214,159,58,0.08) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.stats-row .stat-item {
-  min-width: 120px;
-}
-
-/* RESPONSIVE */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  .hero-section .carousel-caption h1 {
-    font-size: 2.5rem !important;
+  .hero-slide { height: 65vh; }
+  .carousel-caption { 
+    width: 95%; 
+    padding: 1.5rem !important;
+    border-radius: 15px !important;
   }
-  
-  .hero-section .carousel-caption .lead {
-    font-size: 1.3rem !important;
-  }
-  
-  .testimonial-card {
-    padding: 2rem 1.5rem;
-  }
-  
-  .stats-row {
-    gap: 2rem;
-  }
-  
-  .btn-rosa,
-  .cta-section .btn-rosa {
-    padding: 12px 25px !important;
-    font-size: 0.95rem !important;
-    min-height: 46px !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-caption {
-    padding: 2rem 1.5rem;
-  }
-  
-  .service-card .card-body {
-    padding: 2rem 1.5rem !important;
-  }
-  
-  .product-card img {
-    height: 180px;
-  }
-  
-  .btn-rosa,
-  .cta-section .btn-rosa {
-    padding: 10px 20px !important;
-    font-size: 0.9rem !important;
-  }
-}
+  .carousel-caption h1 { font-size: 1.8rem !important; }
+  .carousel-caption .lead { font-size: 1rem !important; }
+}   

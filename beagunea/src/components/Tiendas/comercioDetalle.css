@@ -1,4 +1,6 @@
-/* Banner Principal */
+/* =========================
+   BANNER PRINCIPAL
+   ========================= */
 .comercio-banner {
   position: relative;
   height: 400px;
@@ -10,10 +12,7 @@
 
 .banner-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.3) 0%,
@@ -47,7 +46,9 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Sección de Información */
+/* =========================
+   SECCIÓN INFORMACIÓN
+   ========================= */
 .info-section {
   background: white;
   padding: 2rem;
@@ -68,7 +69,9 @@
   color: #555;
 }
 
-/* Card de Información */
+/* =========================
+   CARD INFO LATERAL
+   ========================= */
 .info-card {
   border: none;
   border-radius: 10px;
@@ -107,23 +110,27 @@
   line-height: 1.6;
 }
 
-/* Sección de Productos */
+/* =========================
+   SECCIÓN PRODUCTOS
+   ========================= */
 .productos-section {
   margin-top: 3rem;
 }
 
-/* CORRECCIÓN ALTURA: Hace que el slide del carrusel ocupe toda la altura disponible */
+/* Hace que el slide ocupe toda la altura */
 .productos-swiper .swiper-slide {
   height: auto;
   display: flex;
 }
 
+/* =========================
+   CARD PRODUCTO
+   ========================= */
 .producto-card {
   border: none;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* CORRECCIÓN ALTURA: Fuerza a la tarjeta a llenar el slide */
   height: 100%;
   width: 100%;
   display: flex;
@@ -139,7 +146,7 @@
   position: relative;
   overflow: hidden;
   height: 200px;
-  flex-shrink: 0; /* Evita que la imagen se aplaste */
+  flex-shrink: 0;
 }
 
 .producto-imagen {
@@ -153,6 +160,7 @@
   transform: scale(1.1);
 }
 
+/* Badge valoración */
 .rating-badge {
   position: absolute;
   top: 10px;
@@ -177,6 +185,7 @@
   font-size: 0.95rem;
 }
 
+/* Texto producto */
 .producto-nombre {
   font-size: 1.15rem;
   font-weight: 700;
@@ -189,17 +198,17 @@
   color: #666;
   line-height: 1.5;
   margin-bottom: 1rem;
-  /* Empuja el contenido inferior hacia abajo para alinear botones */
   flex-grow: 1;
-  
-  /* Opcional: Limita a 3 líneas y pone puntos suspensivos */
+
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* Estrellas de valoración */
+/* =========================
+   ESTRELLAS
+   ========================= */
 .stars-container {
   display: flex;
   gap: 0.2rem;
@@ -218,6 +227,9 @@
   color: #e0e0e0;
 }
 
+/* =========================
+   PRECIO Y BOTÓN
+   ========================= */
 .producto-precio {
   font-size: 1.5rem;
   font-weight: 700;
@@ -235,7 +247,9 @@
   transform: scale(1.05);
 }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE GENERAL
+   ========================= */
 @media (max-width: 768px) {
   .comercio-nombre {
     font-size: 2.5rem;
@@ -252,5 +266,75 @@
   .info-card {
     position: static;
     margin-top: 2rem;
+  }
+}
+
+/* =================================================
+   🔽 ÚNICO AÑADIDO: SEPARAR FLECHAS DEL SWIPER 🔽
+   ================================================= */
+
+.productos-swiper-wrapper {
+  position: relative;
+  max-width: 100%;
+}
+
+/* Mantiene el carrusel igual */
+.productos-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Flechas externas (mismas flechas Swiper) */
+/* Flechas externas */
+.productos-prev,
+.productos-next {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-50%);
+  z-index: 50;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Posición fuera de las cards */
+.productos-prev {
+  left: -50px;
+}
+
+.productos-next {
+  right: -50px;
+}
+
+/* Iconos de flecha AZULES */
+.productos-prev::after {
+  content: "‹";
+  font-size: 3rem;
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.productos-next::after {
+  content: "›";
+  font-size: 3rem;
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+/* Hover suave */
+.productos-prev:hover::after,
+.productos-next:hover::after {
+  color: #084298;
+  transform: scale(1.15);
+}
+
+/* Ocultar flechas en móvil */
+@media (max-width: 768px) {
+  .productos-prev,
+  .productos-next {
+    display: none;
   }
 }

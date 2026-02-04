@@ -1,107 +1,91 @@
 import React from "react";
-import { Container, Row, Col, Card, Button, Carousel, Badge } from "react-bootstrap";
-import { 
-  BsCheckCircleFill, BsStarFill, BsTruck, BsShop, BsGift, BsChatDots, 
-  BsArrowRight, BsFire, BsHeartFill, BsCartPlus, 
-  BsBag, BsLaptop, BsCart3, BsGem
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import {
+  BsStarFill,
+  BsTruck,
+  BsShop,
+  BsGift,
+  BsArrowRight,
+  BsHeartFill,
+  BsCartPlus,
+  BsBag,
+  BsLaptop,
+  BsCart3,
+  BsGem,
+  BsCheckCircleFill,
 } from "react-icons/bs";
 import "./home.css";
 
-
 const Home = () => {
-  const testimonials = [
-    {
-      name: "Ane Bilbao",
-      text: "Oso gomendagarria! Bidalketa azkar eta dendak zoragarriak.",
-      avatar: "/images/avatars/ane.jpg",
-      stars: 5
-    },
-    {
-      name: "Mikel Gasteiz",
-      text: "Km0 produktuekin pozik. Kalitatea eta freskotasuna bermatua!",
-      avatar: "/images/avatars/mikel.jpg",
-      stars: 5
-    },
-    {
-      name: "Maite Donostia",
-      text: "Eskaintza ederrak eta bezero arreta bikaina. Errepikatuko dut!",
-      avatar: "/images/avatars/maite.jpg",
-      stars: 5
-    }
-  ];
-
+  const navigate = useNavigate();
 
   const featuredProducts = [
-    { id: 1, name: "Ogia artisaua", price: "2.50€", discount: 20, image: "/images/products/pan.jpg" },
-    { id: 2, name: "Tomateak organikoak", price: "3.20€", discount: 15, image: "/images/products/tomate.jpg" },
-    { id: 3, name: "Gazta Idiazabal", price: "8.90€", image: "/images/products/gazta.jpg" },
-    { id: 4, name: "Sidra natural", price: "12.50€", discount: 10, image: "/images/products/sidra.jpg" }
+    { 
+      id: 103, 
+      name: "Estutzea", 
+      price: "15.00€", 
+      image: "/images/jostuna/bajopantalon.jpg" 
+    },
+    { 
+      id: 204, 
+      name: "Plantilak", 
+      price: "12.00€", 
+      image: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=400" 
+    },
+    { 
+      id: 3, 
+      name: "Gazta Idiazabal", 
+      price: "8.90€", 
+      image: "/images/products/gazta.jpg" 
+    },
+    { 
+      id: 4, 
+      name: "Sidra natural", 
+      price: "12.50€", 
+      image: "/images/products/sidra.jpg" 
+    },
   ];
-
 
   const categories = [
-    { name: 'Arropa', icon: BsBag, color: 'primary', count: 50 },
-    { name: 'Elektronika', icon: BsLaptop, color: 'info', count: 60 },
-    { name: 'Elikagaiak', icon: BsCart3, color: 'success', count: 70 },
-    { name: 'Bitxikeriak', icon: BsGem, color: 'warning', count: 80 }
+    { name: "Arropa", icon: BsBag, color: "primary", count: 50 },
+    { name: "Elektronika", icon: BsLaptop, color: "info", count: 60 },
+    { name: "Elikagaiak", icon: BsCart3, color: "success", count: 70 },
+    { name: "Bitxikeriak", icon: BsGem, color: "warning", count: 80 },
   ];
-
 
   return (
     <main>
-      <section className="hero-section">
-        <div id="heroCarousel" className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-indicators">
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" className="active" />
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" />
-          </div>
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <div className="hero-slide" 
-                   style={{
-                     backgroundImage: `linear-gradient(rgba(255,129,129,0.8), rgba(255,129,129,0.4)), url('/images/hero1.jpg')`
-                   }} />
-              <div className="carousel-caption d-none d-md-block">
-                <Container>
-                  <h1 className="display-3 fw-bold mb-4 text-white drop-shadow">BeaGunea</h1>
-                  <p className="lead fs-2 mb-4 text-white drop-shadow">Tokiko dendak zure hatz artean. Euskaditik Euskadira 24h!</p>
-                  <div className="d-flex flex-wrap gap-3 justify-content-center">
-                    <Button size="lg" className="btn-rosa px-5 py-3 fs-5">
-                      Dendak ikusi <BsShop className="ms-2" />
-                    </Button>
-                    <Button variant="outline-light" size="lg" className="px-5 py-3 fs-5">
-                      Hasi erostea <BsTruck className="ms-2" />
-                    </Button>
-                  </div>
-                </Container>
+      {/* SECTION 1: HERO CON ZOOM APLICADO */}
+      <section className="hero-section position-relative overflow-hidden">
+        <div
+          className="hero-slide d-flex align-items-center justify-content-center"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('/images/banner1.jpg')`,
+            height: "70vh",
+            backgroundSize: "120%", // <--- AQUÍ ESTÁ EL ZOOM (puedes subirlo a 130% si quieres más)
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat"
+          }}
+        >
+          <Container>
+            <div className="carousel-caption d-block position-relative start-0 w-100 text-center">
+              <h1 className="display-3 fw-bold mb-4 text-white drop-shadow">Bea Gunea</h1>
+              <p className="lead fs-2 mb-4 text-white drop-shadow">
+                Gure helburua internetera iristeko aukerarik izan ez duten saltoki tradizionalak digitalizatzea da, 
+                hurbileko tratua eta auzoko bizitza galdu ez daitezen.
+              </p>
+              <div className="d-flex justify-content-center">
+                <Button size="lg" className="btn-rosa px-5 py-3 fs-5">
+                  Erregistratu doan <BsCheckCircleFill className="ms-2" />
+                </Button>
               </div>
             </div>
-            <div className="carousel-item">
-              <div className="hero-slide" 
-                   style={{
-                     backgroundImage: `linear-gradient(rgba(255,129,129,0.8), rgba(255,129,129,0.4)), url('/images/hero2.jpg')`
-                   }} />
-              <div className="carousel-caption d-none d-md-block">
-                <Container>
-                  <h1 className="display-3 fw-bold mb-4 text-white drop-shadow">Bidalketa Azkarra</h1>
-                  <p className="lead fs-2 mb-4 text-white drop-shadow">Euskaditik Euskadira, 24h barruan. Zure ategora!</p>
-                  <Button size="lg" className="btn-rosa px-5 py-3 fs-5">
-                    Hasi erostea <BsTruck className="ms-2" />
-                  </Button>
-                </Container>
-              </div>
-            </div>
-          </div>
-          <button className="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" />
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span className="carousel-control-next-icon" />
-          </button>
+          </Container>
         </div>
       </section>
 
-
+      {/* SECTION 2: SERVICES */}
       <section className="services py-5 bg-light">
         <Container>
           <Row className="justify-content-center text-center mb-5">
@@ -154,8 +138,8 @@ const Home = () => {
         </Container>
       </section>
 
-
-      <section className="categories py-5">
+      {/* SECTION 3: CATEGORÍAS */}
+      <section className="categories py-5 bg-white">
         <Container>
           <Row className="justify-content-center text-center mb-5">
             <Col lg={8}>
@@ -169,8 +153,10 @@ const Home = () => {
                 <Col lg={3} md={6} className="mb-4" key={index}>
                   <Card className="h-100 border-0 shadow-sm hover-scale category-card text-center">
                     <Card.Body className="p-4">
-                      <div className={`cat-icon mb-3 mx-auto bg-${cat.color} bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center`} 
-                           style={{ width: '80px', height: '80px' }}>
+                      <div
+                        className={`cat-icon mb-3 mx-auto bg-${cat.color} bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center`}
+                        style={{ width: "80px", height: "80px" }}
+                      >
                         <IconComponent size={40} className={`text-${cat.color}`} />
                       </div>
                       <Card.Title className="h5 fw-bold mb-2">{cat.name}</Card.Title>
@@ -187,51 +173,38 @@ const Home = () => {
         </Container>
       </section>
 
-
+      {/* SECTION 4: PRODUCTOS DESTACADOS */}
       <section className="featured-products py-5 bg-light">
         <Container>
           <Row className="justify-content-center text-center mb-5">
             <Col lg={8}>
               <h2 className="display-5 fw-bold mb-4">Produktu Gomendatuak</h2>
+              <p className="lead text-muted mb-4">
+                Tokiko dendetan erosi eta komunitatea babestu. Lehenengo 50 erabiltzaileari <strong>5€ deskontua</strong>!
+              </p>
               <p className="lead text-muted mb-0">Gaurko ⭐ ⭐ ⭐ ⭐ ⭐ gomendioak</p>
             </Col>
           </Row>
           <Row className="g-4">
             {featuredProducts.map((product) => (
               <Col lg={3} md={6} key={product.id}>
-                <Card className="h-100 shadow-lg border-0 hover-lift product-card">
+                <Card className="h-100 shadow-lg border-0 hover-lift product-card bg-white">
                   <div className="position-relative">
-                    <Card.Img 
-                      variant="top" 
-                      src={product.image} 
-                      className="product-img"
-                    />
-                    {product.discount && (
-                      <Badge bg="danger" className="position-absolute top-2 end-2 fs-6 px-2 py-1">
-                        -{product.discount}%
-                      </Badge>
-                    )}
+                    <Card.Img variant="top" src={product.image} className="product-img" />
                     <Button variant="outline-light" size="sm" className="position-absolute top-2 start-2 rounded-circle p-2 wishlist-btn">
                       <BsHeartFill />
                     </Button>
                   </div>
                   <Card.Body className="p-4 text-center">
                     <Card.Title className="h6 fw-bold mb-2 text-truncate">{product.name}</Card.Title>
-                    <div className="d-flex align-items-center justify-content-center mb-3">
+                    <div className="d-flex align-items-center justify-content-center mb-3 lead">
                       <div className="stars me-2">
-                        <BsStarFill className="text-warning" />
-                        <BsStarFill className="text-warning" />
-                        <BsStarFill className="text-warning" />
-                        <BsStarFill className="text-warning" />
-                        <BsStarFill className="text-warning" />
+                        <BsStarFill className="text-warning" /><BsStarFill className="text-warning" /><BsStarFill className="text-warning" /><BsStarFill className="text-warning" /><BsStarFill className="text-warning" />
                       </div>
                       <small className="text-muted">(127)</small>
                     </div>
                     <div className="price-section mb-3">
                       <h5 className="mb-1 fw-bold text-rosa">{product.price}</h5>
-                      {product.discount && (
-                        <small className="text-muted text-decoration-line-through d-block">4.50€</small>
-                      )}
                     </div>
                     <Button className="btn-rosa w-100 py-2">
                       Gehitu saskira <BsCartPlus className="ms-2" />
@@ -242,49 +215,18 @@ const Home = () => {
             ))}
           </Row>
           <div className="text-center mt-5">
-            <Button size="lg" className="btn-rosa px-5 py-3">
-              Dendara guztiak ikusi <BsShop className="ms-2" />
+            <Button 
+              size="lg" 
+              className="btn-rosa px-5 py-3" 
+              onClick={() => navigate("/comercios")}
+            >
+              Denda guztiak ikusi <BsShop className="ms-2" />
             </Button>
-          </div>
-        </Container>
-      </section>
-
-
-      <section className="cta-section py-5">
-        <Container>
-          <div className="text-center">
-            <h2 className="display-3 fw-bold mb-4 text-white">Has zaitez orain!</h2>
-            <p className="lead mb-5 fs-3 text-white-50">
-              Tokiko dendetan erosi eta komunitatea babestu. Lehenengo 50 erabiltzaileari <strong>5€ deskontua</strong>!
-            </p>
-            <div className="d-flex flex-column flex-md-row justify-content-center gap-3 mb-5">
-              <Button size="lg" className="btn-rosa px-6 py-4 fs-5">
-                Erregistratu doan <BsCheckCircleFill className="ms-2" />
-              </Button>
-              <Button variant="outline-light" size="lg" className="px-6 py-4 fs-5">
-                Dendak ikusi <BsShop className="ms-2" />
-              </Button>
-            </div>
-            <div className="stats-row d-flex justify-content-center gap-5 flex-wrap">
-              <div className="stat-item text-center">
-                <div className="stat-number">500+</div>
-                <div className="stat-label">Dendak</div>
-              </div>
-              <div className="stat-item text-center">
-                <div className="stat-number">10K+</div>
-                <div className="stat-label">Bezeroak</div>
-              </div>
-              <div className="stat-item text-center">
-                <div className="stat-number">24h</div>
-                <div className="stat-label">Bidalketa</div>
-              </div>
-            </div>
           </div>
         </Container>
       </section>
     </main>
   );
 };
-
 
 export default Home;

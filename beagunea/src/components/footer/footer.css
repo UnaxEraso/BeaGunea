@@ -1,55 +1,57 @@
-
-
-footer {
-  background: linear-gradient(135deg, #a21635 0%,  #c34f5a 100%);
-  box-shadow: 0 -4px 12px rgba(255,129,129,0.15);
-  transition: background-color 0.3s ease;
+.footer-main {
+  background: linear-gradient(135deg, #a21635 0%, #8d3236 100%);
+  padding-top: 5rem; /* Aumentado para compensar el texto más grande */
+  padding-bottom: 3rem;
+  width: 100%;
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
 }
 
+/* El multiplicador x1.5 aplicado a los textos base */
+.footer-text-large {
+  font-size: 1.25rem !important; /* Antes era ~0.85rem */
+  line-height: 1.6;
+}
 
+.footer-text-copyright {
+  font-size: 1.1rem !important;
+}
 
+h3 { font-size: 2.5rem !important; } /* Título BeaGunea */
+h5 { font-size: 1.6rem !important; } /* Títulos de columnas */
+
+.container-fluid {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 6% !important;
+  padding-right: 6% !important;
+}
+
+/* Hovers potentes para texto grande */
 footer a {
-  transition: all 0.2s ease;
+  transition: all 0.3s ease-weight;
 }
 
 footer a:hover {
-  color: var(--rosa-claro) !important;
-  transform: translateY(-1px);
-}
-
-footer [class*="Bs"] {
-  transition: transform 0.2s ease, color 0.2s ease;
+  color: #F8D4BA !important;
+  transform: scale(1.05);
 }
 
 footer [class*="Bs"]:hover {
-  transform: scale(1.1);
-  color: var(--rosa-claro) !important;
+  color: #F8D4BA !important;
+  transform: scale(1.25);
 }
 
-/* Selector de idioma */
-.btn-group .btn {
-  border-color: rgba(255,255,255,0.3) !important;
+/* Ajustes Responsive */
+@media (max-width: 992px) {
+  .footer-text-large {
+    font-size: 1.1rem !important;
+  }
+  h5 { font-size: 1.4rem !important; }
 }
 
-.btn-group .btn:hover,
-.btn-group .btn.active {
-  background: var(--rosa-claro) !important;
-  border-color: var(--rosa-claro) !important;
-  color: var(--texto-oscuro) !important;
-}
-
-/* Responsive extra móviles */
-@media (max-width: 576px) {
-  footer h5 {
-    font-size: 1.25rem;
-  }
-  footer h6 {
-    font-size: 0.95rem;
-  }
-  .d-flex.gap-2 {
-    gap: 1rem;
-  }
-  .d-flex.gap-3 {
-    gap: 1.5rem;
-  }
-}
+@media (max-width: 768px) {
+  .footer-main { text-align: center; }
+  .container-fluid { padding-left: 30px !important; }
+} 

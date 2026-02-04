@@ -1,120 +1,122 @@
-/* Contenedor principal */
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
 .comercios-main-container {
   background-color: #F8D4BA;
-  min-height: 80vh;
-  padding-top: 5rem;
-  padding-bottom: 3rem;
+  min-height: auto !important; 
+  padding-top: 6rem; 
+  /* 2. Añadimos un margen moderado (el 50% de lo anterior) */
+  padding-bottom: 4rem !important; 
+  overflow-x: hidden;
 }
 
 .titulo-seccion {
   color: #541412;
   font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .subtitulo-seccion {
   color: #8d3236;
+  font-size: 1.1rem;
+  margin-bottom: 3rem; /* Espacio bajo el título */
 }
 
-/* Envoltura para separar las flechas del contenido */
+/* =========================================
+   ESTRUCTURA DEL SWIPER
+   ========================================= */
 .swiper-netflix-wrapper {
-  padding: 0 60px; /* Espacio extra para las flechas fuera de las cards */
   position: relative;
+  max-width: 1450px; 
+  margin: 0 auto;
+  padding: 0 90px;
+  /* Mantenemos margen 0 para controlar el espacio solo con el padding de arriba */
+  margin-bottom: 0px !important; 
 }
 
 .mySwiper {
-  padding-bottom: 60px !important;
-  padding-top: 20px !important;
+  /* Espacio para los puntos de paginación sin empujar demasiado el footer */
+  padding-bottom: 35px !important; 
 }
 
-/* IMPORTANTE: Hacer que los slides tengan altura automática */
-.mySwiper .swiper-slide {
-  height: auto;
+/* =========================================
+   FLECHAS (SOLO ICONO)
+   ========================================= */
+.custom-prev,
+.custom-next {
+  position: absolute;
+  top: 45%; 
+  width: 50px;
+  height: 50px;
+  background-color: transparent; 
   display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transform: translateY(-50%); 
+  transition: all 0.3s ease;
 }
 
-/* Flechas de navegación estilo Netflix */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #8d3236 !important;
-  transition: transform 0.2s ease;
-}
+.custom-prev { left: 20px; }
+.custom-next { right: 20px; }
 
-.swiper-button-next {
-  right: -5px !important;
-}
-
-.swiper-button-prev {
-  left: -5px !important;
-}
-
-.swiper-button-next:after, 
-.swiper-button-prev:after {
-  font-size: 2.5rem !important; /* Flechas más grandes */
+.custom-prev::after,
+.custom-next::after {
+  color: #8d3236; 
+  font-size: 2.8rem; 
   font-weight: bold;
+  font-family: serif;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  transform: scale(1.2);
+.custom-prev::after { content: "❮"; }
+.custom-next::after { content: "❯"; }
+
+.custom-prev:hover, 
+.custom-next:hover {
+  transform: translateY(-50%) scale(1.2);
 }
 
-/* Paginación (puntos inferiores) */
+/* Paginación */
 .swiper-pagination-bullet-active {
-  background-color: #8d3236 !important;
+  background: #8d3236 !important;
 }
 
-/* Tarjetas con efecto Zoom - ALTURA UNIFORME */
+/* =========================================
+   TARJETAS (CARDS)
+   ========================================= */
 .card-netflix {
   border-radius: 15px !important;
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease !important;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* Ocupa toda la altura disponible del slide */
+  border: none !important;
+  background-color: white !important;
+  transition: transform 0.3s ease !important;
+  height: 100%;
+  min-height: 420px; 
 }
 
 .card-netflix:hover {
-  transform: scale(1.08); /* Efecto Netflix al pasar el ratón */
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
-  z-index: 99;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(84, 20, 18, 0.1) !important;
 }
 
 .card-img-custom {
-  height: 220px;
+  height: 180px; 
   object-fit: cover;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
 }
 
-.badge-tipo {
-  background-color: #D69F3A !important;
-}
-
-.card-title-custom {
-  color: #541412;
-  font-weight: 600;
-}
-
-/* El card-body debe usar flexbox para distribuir el espacio */
-.card-netflix .card-body {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Crece para ocupar el espacio disponible */
-}
-
-/* El texto puede crecer y el botón quedará siempre abajo */
-.card-text-custom {
-  font-size: 0.85rem;
-  color: #666;
-  flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
-}
-
-/* El botón siempre quedará al final */
 .btn-ver-mas {
   background-color: #8d3236 !important;
   border: none !important;
-  margin-top: auto; /* Empuja el botón hacia abajo */
+  border-radius: 8px !important;
+  font-weight: 600;
+  margin-top: auto;
 }
 
-.btn-ver-mas:hover {
-  background-color: #541412 !important;
+@media (max-width: 768px) {
+  .comercios-main-container { padding-top: 4rem; }
+  .swiper-netflix-wrapper { padding: 0 10px; }
+  .custom-prev, .custom-next { display: none; }
 }
