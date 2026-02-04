@@ -2,9 +2,11 @@ import React from "react";
 import { Container, Row, Col, Card, Button, Carousel, Badge } from "react-bootstrap";
 import { 
   BsCheckCircleFill, BsStarFill, BsTruck, BsShop, BsGift, BsChatDots, 
-  BsArrowRight, BsFire, BsHeartFill, BsCartPlus 
+  BsArrowRight, BsFire, BsHeartFill, BsCartPlus, 
+  BsBag, BsLaptop, BsCart3, BsGem
 } from "react-icons/bs";
 import "./home.css";
+
 
 const Home = () => {
   const testimonials = [
@@ -28,12 +30,22 @@ const Home = () => {
     }
   ];
 
+
   const featuredProducts = [
     { id: 1, name: "Ogia artisaua", price: "2.50€", discount: 20, image: "/images/products/pan.jpg" },
     { id: 2, name: "Tomateak organikoak", price: "3.20€", discount: 15, image: "/images/products/tomate.jpg" },
     { id: 3, name: "Gazta Idiazabal", price: "8.90€", image: "/images/products/gazta.jpg" },
     { id: 4, name: "Sidra natural", price: "12.50€", discount: 10, image: "/images/products/sidra.jpg" }
   ];
+
+
+  const categories = [
+    { name: 'Arropa', icon: BsBag, color: 'primary', count: 50 },
+    { name: 'Elektronika', icon: BsLaptop, color: 'info', count: 60 },
+    { name: 'Elikagaiak', icon: BsCart3, color: 'success', count: 70 },
+    { name: 'Bitxikeriak', icon: BsGem, color: 'warning', count: 80 }
+  ];
+
 
   return (
     <main>
@@ -89,6 +101,7 @@ const Home = () => {
         </div>
       </section>
 
+
       <section className="services py-5 bg-light">
         <Container>
           <Row className="justify-content-center text-center mb-5">
@@ -108,9 +121,6 @@ const Home = () => {
                   <Card.Text className="lead mb-4">
                     Euskadi osoan <strong>24h</strong> bidalketa. Zure ategora ekartzen dugu.
                   </Card.Text>
-                  <Button className="btn-rosa px-4 py-2">
-                    Ikusi gehiago <BsArrowRight className="ms-2" />
-                  </Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -124,9 +134,6 @@ const Home = () => {
                   <Card.Text className="lead mb-4">
                     <strong>Km0</strong> produktuen aukera zabala. Gure komunitateko saltzaileak.
                   </Card.Text>
-                  <Button className="btn-rosa px-4 py-2">
-                    Dendak ikusi <BsArrowRight className="ms-2" />
-                  </Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -140,9 +147,6 @@ const Home = () => {
                   <Card.Text className="lead mb-4">
                     Eskaintza esklusiboak eta <strong>deskontuak</strong> gure bezeroentzat.
                   </Card.Text>
-                  <Button className="btn-rosa px-4 py-2">
-                    Eskaintzak <BsArrowRight className="ms-2" />
-                  </Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -150,7 +154,6 @@ const Home = () => {
         </Container>
       </section>
 
-   
 
       <section className="categories py-5">
         <Container>
@@ -160,29 +163,35 @@ const Home = () => {
             </Col>
           </Row>
           <Row className="g-4">
-            {['Frutak & Barazkiak', 'Ogiak & Pastak', 'Gaztak & Haragiak', 'Edariak'].map((cat, index) => (
-              <Col lg={3} md={6} className="mb-4" key={index}>
-                <Card className="h-100 border-0 shadow-sm hover-scale category-card text-center">
-                  <Card.Body className="p-4">
-                    <div className="cat-icon mb-3 mx-auto">{getCategoryIcon(index)}</div>
-                    <Card.Title className="h5 fw-bold mb-2">{cat}</Card.Title>
-                    <Card.Text className="text-muted mb-4">+{50 + index * 10} dendatan</Card.Text>
-                    <Button variant="outline-rosa" className="w-100">
-                      Ikusi <BsArrowRight className="ms-1" />
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
+            {categories.map((cat, index) => {
+              const IconComponent = cat.icon;
+              return (
+                <Col lg={3} md={6} className="mb-4" key={index}>
+                  <Card className="h-100 border-0 shadow-sm hover-scale category-card text-center">
+                    <Card.Body className="p-4">
+                      <div className={`cat-icon mb-3 mx-auto bg-${cat.color} bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center`} 
+                           style={{ width: '80px', height: '80px' }}>
+                        <IconComponent size={40} className={`text-${cat.color}`} />
+                      </div>
+                      <Card.Title className="h5 fw-bold mb-2">{cat.name}</Card.Title>
+                      <Card.Text className="text-muted mb-4">+{cat.count} dendatan</Card.Text>
+                      <Button variant="outline-rosa" className="w-100">
+                        Ikusi <BsArrowRight className="ms-1" />
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              );
+            })}
           </Row>
         </Container>
       </section>
+
 
       <section className="featured-products py-5 bg-light">
         <Container>
           <Row className="justify-content-center text-center mb-5">
             <Col lg={8}>
-           
               <h2 className="display-5 fw-bold mb-4">Produktu Gomendatuak</h2>
               <p className="lead text-muted mb-0">Gaurko ⭐ ⭐ ⭐ ⭐ ⭐ gomendioak</p>
             </Col>
@@ -240,6 +249,7 @@ const Home = () => {
         </Container>
       </section>
 
+
       <section className="cta-section py-5">
         <Container>
           <div className="text-center">
@@ -276,9 +286,5 @@ const Home = () => {
   );
 };
 
-const getCategoryIcon = (index) => {
-  const icons = ['🥦', '🍞', '🧀', '🥛'];
-  return <span className="fs-1">{icons[index]}</span>;
-};
 
 export default Home;

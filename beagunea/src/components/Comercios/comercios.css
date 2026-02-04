@@ -2,8 +2,7 @@
 .comercios-main-container {
   background-color: #F8D4BA;
   min-height: 80vh;
-  margin-top: 100px;
-  padding-top: 3rem;
+  padding-top: 5rem;
   padding-bottom: 3rem;
 }
 
@@ -25,6 +24,12 @@
 .mySwiper {
   padding-bottom: 60px !important;
   padding-top: 20px !important;
+}
+
+/* IMPORTANTE: Hacer que los slides tengan altura automática */
+.mySwiper .swiper-slide {
+  height: auto;
+  display: flex;
 }
 
 /* Flechas de navegación estilo Netflix */
@@ -58,12 +63,15 @@
   background-color: #8d3236 !important;
 }
 
-/* Tarjetas con efecto Zoom */
+/* Tarjetas con efecto Zoom - ALTURA UNIFORME */
 .card-netflix {
   border-radius: 15px !important;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease !important;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ocupa toda la altura disponible del slide */
 }
 
 .card-netflix:hover {
@@ -86,14 +94,25 @@
   font-weight: 600;
 }
 
+/* El card-body debe usar flexbox para distribuir el espacio */
+.card-netflix .card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Crece para ocupar el espacio disponible */
+}
+
+/* El texto puede crecer y el botón quedará siempre abajo */
 .card-text-custom {
   font-size: 0.85rem;
   color: #666;
+  flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
 }
 
+/* El botón siempre quedará al final */
 .btn-ver-mas {
   background-color: #8d3236 !important;
   border: none !important;
+  margin-top: auto; /* Empuja el botón hacia abajo */
 }
 
 .btn-ver-mas:hover {

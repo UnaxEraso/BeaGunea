@@ -81,11 +81,21 @@
   color: #d69f3a !important;
 }
 
+/* SOLUCIÓN: Espaciado para el contenido debajo del header fijo */
+body {
+  padding-top: 100px;
+}
+
 @media (max-width: 991px) {
   .border-start {
     border-start: none !important;
     border-top: 1px solid rgba(248, 212, 186, 0.2);
     margin-top: 10px;
     padding-top: 10px;
+  }
+  
+  /* Ajuste del padding en móvil si el header crece */
+  body {
+    padding-top: 120px;
   }
 }

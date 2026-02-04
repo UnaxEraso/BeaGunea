@@ -1,0 +1,256 @@
+/* Banner Principal */
+.comercio-banner {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 3rem;
+}
+
+.banner-content {
+  color: white;
+}
+
+.tipo-badge {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+.comercio-nombre {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.comercio-subtitulo {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Sección de Información */
+.info-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.biografia-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Card de Información */
+.info-card {
+  border: none;
+  border-radius: 10px;
+  position: sticky;
+  top: 20px;
+}
+
+.info-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  color: #0d6efd;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.info-item h6 {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #2c3e50;
+}
+
+.info-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Sección de Productos */
+.productos-section {
+  margin-top: 3rem;
+}
+
+/* CORRECCIÓN ALTURA: Hace que el slide del carrusel ocupe toda la altura disponible */
+.productos-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.producto-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* CORRECCIÓN ALTURA: Fuerza a la tarjeta a llenar el slide */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.producto-imagen-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  flex-shrink: 0; /* Evita que la imagen se aplaste */
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.producto-card:hover .producto-imagen {
+  transform: scale(1.1);
+}
+
+.rating-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rating-star {
+  color: #ffc107;
+  font-size: 0.9rem;
+}
+
+.rating-badge span {
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.producto-nombre {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+}
+
+.producto-descripcion {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  /* Empuja el contenido inferior hacia abajo para alinear botones */
+  flex-grow: 1;
+  
+  /* Opcional: Limita a 3 líneas y pone puntos suspensivos */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Estrellas de valoración */
+.stars-container {
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.star-icon {
+  font-size: 1rem;
+}
+
+.star-icon.filled {
+  color: #ffc107;
+}
+
+.star-icon.empty {
+  color: #e0e0e0;
+}
+
+.producto-precio {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+.btn-add-cart {
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-add-cart:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comercio-nombre {
+    font-size: 2.5rem;
+  }
+
+  .comercio-subtitulo {
+    font-size: 1.1rem;
+  }
+
+  .comercio-banner {
+    height: 300px;
+  }
+
+  .info-card {
+    position: static;
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,83 @@
+:root {
+  --primary-rosa: #a40f32; /* Color corporativo BeaGunea */
+  --primary-hover: #8a0c2a;
+}
+
+/* GENERAL */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.text-rosa { color: var(--primary-rosa) !important; }
+.bg-rosa { background-color: var(--primary-rosa) !important; }
+
+.btn-rosa {
+  background-color: var(--primary-rosa);
+  border-color: var(--primary-rosa);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-rosa:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline-rosa {
+  color: var(--primary-rosa);
+  border-color: var(--primary-rosa);
+}
+
+.btn-outline-rosa:hover {
+  background-color: var(--primary-rosa);
+  color: white;
+}
+
+/* HERO SECTION */
+.hero-slide {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+.drop-shadow {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* CARDS EFFECTS */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+  transition: transform 0.2s ease;
+}
+
+/* COMERCIO PAGE HEADER */
+.banner-bg {
+  z-index: 1;
+}
+
+.comercio-header {
+  margin-bottom: 2rem;
+}
+
+.product-card {
+  overflow: hidden;
+}
+
+.product-card img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
